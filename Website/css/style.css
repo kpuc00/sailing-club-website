@@ -7,9 +7,9 @@ body {
 }
 
 .content {
-    background-color: #dadada;
+    background-color: rgba(112, 112, 112, 0.2);
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     display: grid;
     grid-template-columns: 70% 30%;
     min-height: 100vh;
@@ -103,7 +103,7 @@ nav a:hover,
     display: block;
 }
 
-.rightcolumn {
+.rightColumn {
     grid-column: 2/3;
     text-align: justify;
 }
@@ -115,4 +115,25 @@ footer {
     padding: 10px;
     text-align: center;
     margin-top: 2vh;
+}
+
+footer a:link,
+footer a:visited {
+    background: #666666;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+footer a:hover,
+footer a:active {
+    background: #4ea9ff;
+}
+
+.copyright {
+    background-color: #4ea9ff;
+    margin-top: 1vh;
+    padding: 5px;
 }
