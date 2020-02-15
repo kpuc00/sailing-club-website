@@ -103,8 +103,12 @@ nav a:hover,
     display: block;
 }
 
+.leftColumn {
+    grid-column: 1/ 2;
+    justify-content: center;
+}
 .rightColumn {
-    grid-column: 2/3;
+    grid-column: 2/ 3;
     text-align: justify;
 }
 
@@ -142,8 +146,7 @@ footer a:active {
 
 
 .infoBox {
-    position: absolute;
-    display: flex;
+    position: relative;
     height: 300px;
     width: 250px;
     border-radius: 15px;
@@ -153,7 +156,6 @@ footer a:active {
 }
 
 .infoBox a {
-    display: block;
     color: #000;
 }
 
@@ -162,16 +164,17 @@ footer a:active {
     height: 300px;
     width: 250px;
     border-radius: 15px;
-    background: red;
+    background: plum;
     transition: 1s;
     text-align: center;
     overflow: hidden;
     padding: 5px;
+    z-index: 1;
 }
 
 .infoBox .box:hover {
     transform: scale(1.1);
-    background: crimson;
+    background: #66ccff;
     box-shadow: 2px 2px 2px #000000;
 }
 
@@ -192,6 +195,7 @@ footer a:active {
     opacity: 0;
     font-size: 0;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .infoBox .box:hover .context {
