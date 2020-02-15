@@ -140,61 +140,70 @@ footer a:active {
 
 /*Info Box start*/
 
+
 .infoBox {
     position: absolute;
-    width: 250px;
+    display: flex;
     height: 300px;
-    background: orange;
+    width: 250px;
     border-radius: 15px;
+    background: blueviolet;
     float: left;
     margin: 1vh 1vw;
-    transition: 1s;
-
-    overflow: hidden;
 }
 
-.infoBox:hover {
-    transform: scale(1.1);
-    background-color: #ff800a;
-    box-shadow: 2px 2px 2px #000000;
-    z-index: 1;
+.infoBox a {
+    display: block;
+    color: #000;
 }
 
-.infoBox .description {
-    opacity: 0;
-    position: relative;
-    top: 100%;
-    transition: 1s;
-    text-align: center;
-    box-sizing: border-box;
-    font-size: 0px;
-}
-
-.infoBox:hover .description {
-    opacity: 1;
-    top: 10%;
-    font-size: 20px;
-}
-
-.infoBox > img {
+.infoBox .box {
     position: absolute;
-    width: 80%;
-    height: 30%;
-    box-sizing: border-box;
-    top: 25%;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 1;
-
-    text-align: center;
-
+    height: 300px;
+    width: 250px;
+    border-radius: 15px;
+    background: red;
     transition: 1s;
-    
+    text-align: center;
+    overflow: hidden;
+    padding: 5px;
 }
 
-.infoBox:hover > img {
-    width: 0%;
-    height: 0%;
-    top: 100%;
-    opacity: 0;
+.infoBox .box:hover {
+    transform: scale(1.1);
+    background: crimson;
+    box-shadow: 2px 2px 2px #000000;
 }
+
+.infoBox .box img {
+    margin-top: 20%;
+    width: 60%;
+    transition: 1s;
+}
+
+.infoBox .box:hover img {
+    margin-top: 0%;
+}
+
+.infoBox .box .context {
+    position: absolute;
+    top: 100%;
+    transition: 1s;
+    opacity: 0;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+.infoBox .box:hover .context {
+    top: 25%;
+    opacity: 1;
+    font-size: 15px;
+}
+
+.infoBox .box:hover .context p {
+    font-size: 15px;
+}
+
+/*Info Box end*/
+
+
