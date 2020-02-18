@@ -10,6 +10,7 @@
     min-width: 560px;
     margin-left: 5vw;
     margin-right: 5vw;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
