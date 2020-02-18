@@ -30,7 +30,6 @@
     height: 300px;
     width: 250px;
     border-radius: 15px;
-    background: blueviolet;
     float: left;
     margin: 1vh 1vw;
 }
@@ -44,7 +43,7 @@
     height: 300px;
     width: 250px;
     border-radius: 15px;
-    background: plum;
+    background: rgb(190, 190, 190);
     transition: 1s;
     text-align: center;
     overflow: hidden;
