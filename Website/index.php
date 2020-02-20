@@ -4,9 +4,7 @@
 <head>
     <title>Sailing club</title>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -122,21 +120,7 @@
     </div>
 
     <footer>
-
-        <img src="images/SCF.png" alt="SCF Logo" width="10%">
-        <br>
-        <a href=""><i class="fa fa-address-card"></i> Contact</a>
-        <a href=""><i class="fa fa-sitemap"></i> Sitemap</a>
-        <br>
-        <br><strong>Social networks:</strong><br>
-        <a href="https://www.facebook.com/kristiyanstrahilov" target="_blank"><i class="fa fa-facebook"></i> Kristiyan Strahilov</a>
-        <a href="https://www.instagram.com/kpuc00/" target="_blank"><i class="fa fa-instagram"></i> kpuc00</a>
-        <a href="https://www.facebook.com/profile.php?id=100007862648519" target="_blank"><i class="fa fa-facebook"></i> Michael Groenewegen van der Weijden</a>
-        <a href="https://www.instagram.com/michael_gvdw/" target="_blank"><i class="fa fa-instagram"></i> michael_gvdw</a>
-        <div class="copyright">
-            Copyright © Kristiyan Strahilov, Michael Groenewegen van der Weijden - 2020
-        </div>
-
+        <?php require_once("footer.php"); ?>
     </footer>
 
 </body>
