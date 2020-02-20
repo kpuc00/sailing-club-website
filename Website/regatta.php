@@ -1,15 +1,20 @@
 <?php 
     require_once("fetchData/connection.php");
     $regattaID =  $_GET['regattaID'];
-    $query = "CALL getCompetitors($regattaID)";
-    $result = mysqli_query($conn, $query);
+
+    $query1 = "CALL GetCompetitors($regattaID)";
+    $result1 = mysqli_query($conn, $query1);
+
+    $query2 = "CALL GetRaceName($regattaID)";
+    $result2 = mysqli_query($conn, $query2);
+    echo $result2;
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Optimist regatta 2019</title>
+    <title>Regatta 2019</title>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/regatta.css">
@@ -27,7 +32,7 @@
 
     <div class="content">
 
-        <h1>Optimist Regatta 2019</h1>
+        <?php echo '<h1>' . $result2 . '</h1>'; ?>
         <table>
             <tr>
                 <th>ID</th>
@@ -38,7 +43,7 @@
             </tr>
             <?php
                 $index = 1;
-                while($row = mysqli_fetch_assoc($result))
+                while($row = mysqli_fetch_assoc($result1))
                 {
             ?>
                 <tr>
