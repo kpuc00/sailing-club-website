@@ -1,6 +1,7 @@
 <?php 
     require_once("fetchData/connection.php");
-    $query = "CALL getCompetitors('Optimist Regatta 2019')";
+    $regattaID =  $_GET['regattaID'];
+    $query = "CALL getCompetitors($regattaID)";
     $result = mysqli_query($conn, $query);
 ?>
 

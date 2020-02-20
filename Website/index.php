@@ -105,12 +105,12 @@
         <div class="rightColumn">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
             <ul class="linkFormat">
-                <li><a href="">Optimist Regatta 2019</a></li>
-                <li><a href="">Laser 4.7 Regatta 2019</a></li>
-                <li><a href="">Finn Regatta 2019</a></li>
-                <li><a href="">49er Regatta 2019</a></li>
-                <li><a href="">420 Regatta 2019</a></li>
-                <li><a href="">470 Regatta 2019</a></li>
+                <li><a href="regatta.php?regattaID=1">Optimist Regatta 2019</a></li>
+                <li><a href="regatta.php?regattaID=2">Laser 4.7 Regatta 2019</a></li>
+                <li><a href="regatta.php?regattaID=3">49er Regatta 2019</a></li>
+                <li><a href="regatta.php?regattaID=4">Finn Regatta 2019</a></li>
+                <li><a href="regatta.php?regattaID=5">420 Regatta 2019</a></li>
+                <li><a href="regatta.php?regattaID=6">470 Regatta 2019</a></li>
             </ul>
 
 
