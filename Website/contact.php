@@ -25,7 +25,7 @@
         <div class="leftColumn">
 
             <div class="form">
-                <form action="#action_page.php">
+                <form action="fetchData/insertMessage.php">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="John Doe">
 
