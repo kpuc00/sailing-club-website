@@ -16,90 +16,16 @@
        <?php require_once("navigation_bar.php"); ?>
     </nav>
 
-    <div class="content">
-
-        <div id="slider">
-            <figure>
-                <img src="images/picture-1.jfif">
-                <img src="images/picture-2.jfif">
-                <img src="images/picture-3.jfif">
-                <img src="images/Feva03.jpg">
-                <img src="images/maxresdefault.jpg">
-            </figure>
-        </div>
-
+    <div class="content">   
         <div class="leftColumn">
-            <div class="infoBox">
-                <a href="">
-                    <div class="box">
-                        <img src="images/laser-logo.png">
-                        <div class="context">
-                            <h3>Hello</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
-            <div class="infoBox">
-                <a href="">
-                    <div class="box">
-                        <img src="images/optimist-logo.png">
-                        <div class="context">
-                            <h3>Hello</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
-            <div class="infoBox">
-                <a href="">
-                    <div class="box">
-                        <img src="images/49er-logo.png">
-                        <div class="context">
-                            <h3>Hello</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="infoBox">
-                <a href="">
-                    <div class="box">
-                        <img src="images/470-logo.png">
-                        <div class="context">
-                            <h3>Hello</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="infoBox">
-                <a href="">
-                    <div class="box">
-                        <img src="images/420-logo.png">
-                        <div class="context">
-                            <h3>Hello</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="infoBox">
-                <a href="">
-                    <div class="box">
-                        <img src="images/Finn_insigna.png">
-                        <div class="context">
-                            <h3>Hello</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <?php 
+                require_once("fetchData/getClasses.php"); 
+                for ($i = 0; $i < 10; $i++){
+                    require("infoBox.php");
+                }
+            ?>
         </div>
 
         <div class="rightColumn">
@@ -112,8 +38,6 @@
                 <li><a href="regatta.php?regattaID=5">420 Regatta 2019</a></li>
                 <li><a href="regatta.php?regattaID=6">470 Regatta 2019</a></li>
             </ul>
-
-
         </div>
 
 
