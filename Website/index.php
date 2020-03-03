@@ -22,9 +22,13 @@
 
             <?php 
                 require_once("fetchData/getClasses.php"); 
-                for ($i = 0; $i < 10; $i++){
+
+                while ($row = mysqli_fetch_array($result)) {
+                    
                     require("infoBox.php");
+
                 }
+
             ?>
         </div>
 
@@ -39,7 +43,6 @@
                 <li><a href="regatta.php?regattaID=6">470 Regatta 2019</a></li>
             </ul>
         </div>
-
     </div>
 
     <footer>
