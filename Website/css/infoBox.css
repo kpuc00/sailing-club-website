@@ -43,13 +43,13 @@
 }
 
 .infoBox .box .context {
-    position: absolute;
+    
+    display: flex;
+    justify-content: center;
     top: 100%;
     transition: 1s;
     opacity: 0;
     font-size: 0;
-    box-sizing: border-box;
-    text-align: center;
 }
 
 .infoBox .box:hover .context {

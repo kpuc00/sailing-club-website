@@ -18,29 +18,25 @@
 
     <div class="content">   
         <div class="leftColumn">
-
-
             <?php 
                 require_once("fetchData/getClasses.php"); 
-
-                while ($row = mysqli_fetch_array($result)) {
-                    
-                    require("infoBox.php");
-
+                while ($row = mysqli_fetch_array($classes)) { 
+                    include("infoBox.php");
                 }
-
             ?>
         </div>
 
         <div class="rightColumn">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
             <ul class="linkFormat">
-                <li><a href="regatta.php?regattaID=1">Optimist Regatta 2019</a></li>
-                <li><a href="regatta.php?regattaID=2">Laser 4.7 Regatta 2019</a></li>
-                <li><a href="regatta.php?regattaID=3">49er Regatta 2019</a></li>
-                <li><a href="regatta.php?regattaID=4">Finn Regatta 2019</a></li>
-                <li><a href="regatta.php?regattaID=5">420 Regatta 2019</a></li>
-                <li><a href="regatta.php?regattaID=6">470 Regatta 2019</a></li>
+                <?php
+                    include("fetchData/getRacesID_Name.php");
+                    while ($row1 = mysqli_fetch_array($raceID_Name)) {
+                ?>
+                        <a href="regatta.php?regattaID=<?php echo $row["raceID"]; ?>"><?php echo $row["RaceName"]?></a>
+                <?php
+                    }
+                ?> 
             </ul>
         </div>
     </div>

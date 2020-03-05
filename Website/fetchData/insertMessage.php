@@ -7,5 +7,4 @@
     $subject = $_POST["subject"];
 
     $query = "Call AddContactMessage($name, $email, $phone, $subject )"
-
 ?>

@@ -24,12 +24,14 @@
                 <i class="fa fa-list"></i> Regattas <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="regatta.php?regattaID=1" $_><i class="fa fa-file"></i> Optimist Regatta 2019</a>
-                <a href="regatta.php?regattaID=2"><i class="fa fa-file"></i> Laser 4.7 Regatta 2019</a>
-                <a href="regatta.php?regattaID=3"><i class="fa fa-file"></i> 49er Regatta 2019</a>
-                <a href="regatta.php?regattaID=4"><i class="fa fa-file"></i> Finn Regatta 2019</a>
-                <a href="regatta.php?regattaID=5"><i class="fa fa-file"></i> 470 Regatta 2019</a>
-                <a href="regatta.php?regattaID=6"><i class="fa fa-file"></i> 420 Regatta 2019</a>
+                <?php
+                    include("fetchData/getRacesID_Name.php");
+                    while ($row = mysqli_fetch_array($raceID_Name)) {
+                ?>
+                        <a href="regatta.php?regattaID=<?php echo $row["raceID"]; ?>"><i class="fa fa-file"></i> <?php echo $row["RaceName"]?></a>
+                <?php
+                    }
+                ?>  
             </div>
         </div>
         <div class="contact-button">

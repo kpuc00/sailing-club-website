@@ -6,16 +6,17 @@
         <link rel="stylesheet" type="text/css" href="css/infoBox.css">
     </head>
     <body>
+
         <div class="infoBox">
-            
+            <a href="class.php?classID=<?php echo $row["classID"] ?>>">
                 <div class="box">
                     <img src="images/laser-logo.png">
                     <div class="context">
-                        <h3>Hello</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                        <h3><?php echo $row["ClassName"]?></h3>
+                        <p><?php echo $row["ClassDescription"]; ?></p>
                     </div>
                 </div>
-        
+            </a>
         </div>
     </body>
 </html>

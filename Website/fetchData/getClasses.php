@@ -1,5 +1,5 @@
 <?php
     require_once("connection.php");
     $query = "CALL GetClasses()";
-    $result = mysqli_query($conn, $query);
+    $classes = mysqli_query($conn, $query);
 ?>
