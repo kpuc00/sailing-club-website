@@ -25,12 +25,12 @@
                 }
                 mysqli_free_result($classes);
                 mysqli_close($conn);
-
             ?>
         </div>
 
         <div class="rightColumn">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
+            
             <ul class="linkFormat">
                 <?php
                     include("fetchData/getRacesID_Name.php");
@@ -38,13 +38,12 @@
                 ?>
                         <a href="regatta.php?regattaID=<?php echo $row["raceID"]; ?>"><?php echo $row["RaceName"]?></a>
                 <?php
-
                     }
                     mysqli_free_result($raceID_Name);
                     mysqli_close($conn);
-                    
                 ?> 
             </ul>
+
         </div>
     </div>
 

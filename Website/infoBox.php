@@ -12,7 +12,7 @@
                 <div class="box">
                     <img src="images/laser-logo.png">
                     <div class="context">
-                        <h3><?php echo $row["ClassName"]?></h3>
+                        <h3><?php echo $row["ClassName"]; ?></h3>
                         <p><?php echo $row["ClassDescription"]; ?></p>
                     </div>
                 </div>

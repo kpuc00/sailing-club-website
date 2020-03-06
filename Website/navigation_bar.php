@@ -11,12 +11,16 @@
                 <i class="fa fa-anchor"></i> Classes <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href=""><i class="fa fa-ship"></i> Optimist</a>
-                <a href=""><i class="fa fa-ship"></i> Laser</a>
-                <a href=""><i class="fa fa-ship"></i> 49er</a>
-                <a href=""><i class="fa fa-ship"></i> Finn</a>
-                <a href=""><i class="fa fa-ship"></i> 420</a>
-                <a href=""><i class="fa fa-ship"></i> 470</a>
+                <?php 
+                    require_once("fetchData/getClassID_Name.php");
+                    while ($row = mysqli_fetch_array($classID_Name)) {
+                ?>
+                        <a href="class.php?classID=<?php echo $row["classID"]; ?>"><i class="fa fa-ship"></i> <?php echo $row["ClassName"]; ?></a>
+                <?php
+                    }
+                    mysqli_free_result($classID_Name);
+                    mysqli_close($conn);
+                ?>
             </div>
         </div>
         <div class="dropdown">
@@ -26,11 +30,9 @@
             <div class="dropdown-content">
                 <?php
                     include("fetchData/getRacesID_Name.php");
-                   
                     while ($row = mysqli_fetch_array($raceID_Name)) {
                 ?>
-                        <a href="regatta.php?regattaID=<?php echo $row["raceID"]; ?>"><i class="fa fa-file"></i> <?php echo $row["RaceName"]?></a>
-                        
+                        <a href="regatta.php?regattaID=<?php echo $row["raceID"]; ?>"><i class="fa fa-file"></i> <?php echo $row["RaceName"]?></a>   
                 <?php
                     }
                     mysqli_free_result($raceID_Name);
@@ -42,5 +44,4 @@
             <a href="contact.php"><i class="fa fa-address-card"></i> Contact</a>
         </div>
     </body>
-
 </html>

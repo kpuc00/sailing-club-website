@@ -9,6 +9,7 @@
 
 .infoBox a {
     color: #000;
+    text-decoration: none;
 }
 
 .infoBox .box {
@@ -19,6 +20,7 @@
     background: rgb(190, 190, 190);
     transition: 1s;
     text-align: center;
+    text-decoration: none;
     overflow: hidden;
     padding: 5px;
     z-index: 1;
@@ -43,13 +45,12 @@
 }
 
 .infoBox .box .context {
-    
-    display: flex;
-    justify-content: center;
     top: 100%;
     transition: 1s;
     opacity: 0;
     font-size: 0;
+    text-align: center;
+    transition: 1s;
 }
 
 .infoBox .box:hover .context {
