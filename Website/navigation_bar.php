@@ -34,13 +34,7 @@
         </div>
         <div class="contact-button">
             <a href="contact.php"><i class="fa fa-address-card"></i> Contact</a>
-            <?php 
-if(isset($_SESSION['username'])){
-    echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
-}else{
-    echo "<a href='login.php'><i class='fa fa-sign-in'></i> Login</a>";
-}
-?>
+            <a href='login.php'><i class='fa fa-sign-in'></i> Login</a>
         </div>
     </body>
 
