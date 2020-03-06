@@ -1,10 +1,11 @@
 <!DOCTYPE html> 
 <html>
+
     <head>
         <link rel="stylesheet" type="text/css" href="css/footer.css">
     </head>
-    <body>
-        
+
+    <body>        
         <img src="images/SCF.png" alt="SCF Logo" width="10%">
         <br>
         <a href=""><i class="fa fa-address-card"></i> Contact</a>
@@ -16,7 +17,8 @@
         <a href="https://www.facebook.com/profile.php?id=100007862648519" target="_blank"><i class="fa fa-facebook"></i> Michael Groenewegen van der Weijden</a>
         <a href="https://www.instagram.com/michael_gvdw/" target="_blank"><i class="fa fa-instagram"></i> michael_gvdw</a>
         <div class="copyright">
-            Copyright © Kristiyan Strahilov, Michael Groenewegen van der Weijden - 2020
+            Copyright © Kristiyan Strahilov, Michael Groenewegen van der Weijden, Nikola Bolic - 2020
         </div>
     </body>
+    
 </html>

@@ -1,0 +1,14 @@
+.bg-danger {
+	color: #ff3300;
+	padding: 0 5px;
+}
+
+.bg-success {
+	color: #00ff00;
+	padding: 0 5px;
+}
+
+a {
+	color: #EF1F2F;
+	text-decoration: none;
+}
