@@ -21,8 +21,11 @@
             <?php 
                 require_once("fetchData/getClasses.php"); 
                 while ($row = mysqli_fetch_array($classes)) { 
-                    include("infoBox.php");
+                    include("infoBox.php");                    
                 }
+                mysqli_free_result($classes);
+                mysqli_close($conn);
+
             ?>
         </div>
 
@@ -31,11 +34,15 @@
             <ul class="linkFormat">
                 <?php
                     include("fetchData/getRacesID_Name.php");
-                    while ($row1 = mysqli_fetch_array($raceID_Name)) {
+                    while ($row = mysqli_fetch_array($raceID_Name)) {
                 ?>
                         <a href="regatta.php?regattaID=<?php echo $row["raceID"]; ?>"><?php echo $row["RaceName"]?></a>
                 <?php
+
                     }
+                    mysqli_free_result($raceID_Name);
+                    mysqli_close($conn);
+                    
                 ?> 
             </ul>
         </div>
