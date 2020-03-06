@@ -25,9 +25,9 @@
         <div class="leftColumn">
 
             <div class="form">
-                <form action="fetchData/insertMessage.php">
+                <form action="fetchData/insertMessage.php" method="POST">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    <input type="text" id="name" name="name" placeholder="John Doe" value="" required>
 
                     <label for="email">E-mail</label>
                     <input type="text" id="email" name="email" placeholder="j.doe@fontys.nl" required>
@@ -38,7 +38,7 @@
                     <label for="subject">Message</label>
                     <textarea id="subject" name="subject" placeholder="Your message here.." style="height:200px" required></textarea>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" >
                 </form>
             </div>
 
