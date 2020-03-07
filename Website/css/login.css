@@ -85,3 +85,9 @@ input[type=submit]:hover {
     color: #ff3300;
     background: none;
 }
+
+.error {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: larger;
+}

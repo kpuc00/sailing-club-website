@@ -1,9 +1,6 @@
-<?php require('config.php');
-
-//logout
-$user->logout(); 
-
-//logged in return to index page
+<?php
+session_start();
+session_destroy();
+// Redirect to the login page:
 header('Location: ../index.php');
-exit;
 ?>

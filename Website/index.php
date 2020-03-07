@@ -1,3 +1,7 @@
+<?php
+require 'php/includes.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +17,7 @@
 <body>
 
     <nav>
-       <?php require_once("navigation_bar.php"); ?>
+       <?php require_once("php/navigation_bar.php"); ?>
     </nav>
 
     <div class="content">   
@@ -23,7 +27,7 @@
             <?php 
                 require_once("fetchData/getClasses.php"); 
                 for ($i = 0; $i < 6; $i++){
-                    require("infoBox.php");
+                    require("php/infoBox.php");
                 }
             ?>
         </div>
@@ -43,7 +47,7 @@
     </div>
 
     <footer>
-        <?php require_once("footer.php"); ?>
+        <?php require_once("php/footer.php"); ?>
     </footer>
 
 </body>

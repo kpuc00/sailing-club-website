@@ -1,3 +1,7 @@
+<?php
+require 'php/includes.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +19,7 @@
 <body>
 
     <nav>
-        <?php require_once("navigation_bar.php"); ?>
+        <?php require_once("php/navigation_bar.php"); ?>
     </nav>
 
     <div class="content">
@@ -54,7 +58,7 @@
     </div>
 
     <footer>
-        <?php require_once("footer.php"); ?>
+        <?php require_once("php/footer.php"); ?>
     </footer>
 
 </body>
