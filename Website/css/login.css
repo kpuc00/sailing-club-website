@@ -27,6 +27,7 @@ h1 {
 }
 
 input[type=username],
+input[type=text],
 input[type=password],
 input[type=email] {
     font-family: 'Roboto';

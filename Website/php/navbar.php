@@ -1,3 +1,15 @@
+<?php
+require 'fetchData/connection.php';
+
+//get user picture path from database
+$getnavpic = $conn->prepare('SELECT profilepicture FROM accounts WHERE id = ?');
+$getnavpic->bind_param('i', $_SESSION['id']);
+$getnavpic->execute();
+$getnavpic->bind_result($navprofilepic);
+$getnavpic->fetch();
+$getnavpic->close();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,13 +55,18 @@
         </div>
         <a href="contact.php"><i class="fa fa-address-card"></i> Contact</a>
         <div class="contact-button">
-            
             <?php
-                if(isset($_SESSION['loggedin'])){
-                    echo "<a href='profile.php'><i class='fa fa-user-circle'></i> " . $_SESSION['name'];
+                if(isset($_SESSION['loggedin']) && $navprofilepic ==""){
+                    echo "<div class='profilebtn'><a href='profile.php'><img class='navprofilepic' src='images/profilepictures/default.png'> " . $_SESSION['displayname'];
                     echo "</a>";
-                    echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
-                }else{
+                    echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a></div>";
+                }
+                else if(isset($_SESSION['loggedin'])){
+                    echo "<div class='profilebtn'><a href='profile.php'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."'> " . $_SESSION['displayname'];
+                    echo "</a>";
+                    echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a></div>";
+                }
+                else{
                     echo "<a href='login.php'><i class='fa fa-sign-in'></i> Login</a>";
                 }
             ?>

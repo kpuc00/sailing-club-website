@@ -21,6 +21,20 @@ $stmt->bind_result($password, $email);
 $stmt->fetch();
 $stmt->close();
 
+//upload profilepic
+if(isset($_POST['submit'])){
+	move_uploaded_file($_FILES['file']['tmp_name'],"images/profilepictures/".$_FILES['file']['name']);
+	$q = mysqli_query($conn,"UPDATE accounts SET profilepicture = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
+}
+
+//get user picture path from database
+$getpic = $conn->prepare('SELECT profilepicture FROM accounts WHERE id = ?');
+$getpic->bind_param('i', $_SESSION['id']);
+$getpic->execute();
+$getpic->bind_result($profilepic);
+$getpic->fetch();
+$getpic->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -44,14 +58,16 @@ $stmt->close();
 
     <div class="content">
 
-		<h1>Profile</h1>
-			<h3>Welcome back, <?=$_SESSION['name']?>!</h3>
+	<h1>Profile</h1>
+
+	<div class="leftColumn">
+			<h3>Welcome back, <?=$_SESSION['displayname']?>!</h3>
 
 			<p>Your account details are below:</p>
 				<table>
 					<tr>
 						<td>Username:</td>
-						<td><?=$_SESSION['name']?></td>
+						<td><?=$_SESSION['username']?></td>
 					</tr>
 					<tr>
 						<td>Password:</td>
@@ -62,6 +78,24 @@ $stmt->close();
 						<td><?=$email?></td>
 					</tr>
 				</table>
+	</div>
+
+	<div class="rightColumn">
+	<h3><?=$_SESSION['displayname']?></h3>
+	<?php
+        if($profilepic == ""){
+            echo "<img class='profilepic' src='images/profilepictures/default.png'>";
+        } else {
+            echo "<img class='profilepic' src='images/profilepictures/".$profilepic."'>";
+		}
+	?>
+	<h4>Upload new profile picture.</h4>
+	<form action="" method="post" enctype="multipart/form-data">
+			<input type="file" name="file">
+			<br><br>
+			<input type="submit" name="submit" value="Upload new picture">
+		</form>
+	</div>
 
     </div>
 

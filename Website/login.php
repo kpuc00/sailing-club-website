@@ -35,7 +35,7 @@ if (isset($_SESSION['loggedin'])) {
 
         <div class="form">
 
-            <form method="post">
+            <form action="" method="post">
             <h3>Enter your credentials:</h3>
 
             <div class="error"><?php echo $message; ?></div>

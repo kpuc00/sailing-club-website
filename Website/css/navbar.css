@@ -87,3 +87,19 @@ nav a:hover,
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.profilebtn {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.profilebtn {
+    max-height: 46px;
+    text-align: center;
+}
+
+.navprofilepic {
+    width: 30px;
+    border-radius: 50%;
+}
