@@ -29,9 +29,10 @@
 /*Regatta links styling start*/
 
 .rightColumn .linkFormat {
-    margin-top: 5vh;
+    margin: 5% auto;
     text-align: center;
     list-style-type: none;
+   
 }
 
 .rightColumn .linkFormat li {

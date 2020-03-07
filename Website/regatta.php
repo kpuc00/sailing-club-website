@@ -34,7 +34,13 @@ require 'php/includes.php';
         <?php require_once("php/navigation_bar.php"); ?>
     </nav>
 
+  
+
     <div class="content">
+        
+        <form action="takePartRace.php" target="_self">
+            <input type="submit" value="Take part"/>
+        </form> 
 
         <?php echo '<h1>' . $result2 . '</h1>'; ?>
         <table>

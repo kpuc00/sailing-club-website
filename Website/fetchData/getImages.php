@@ -1,5 +1,5 @@
 <?php 
-    require_once("connection.php");
+    require("connection.php");
     $query = "CALL GetImages()";
-    $result = mysqli_query($conn, $query);
+    $images = mysqli_multi_query($conn, $query);
 ?>
