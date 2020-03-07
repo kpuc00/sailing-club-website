@@ -19,13 +19,12 @@ if (isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
 
     <nav>
-       <?php require_once("php/navigation_bar.php"); ?>
+       <?php require_once("php/navbar.php"); ?>
     </nav>
 
     <div class="content">
