@@ -25,7 +25,7 @@ require 'php/includes.php';
             <?php 
                 require_once("fetchData/getClasses.php"); 
                 while ($row = mysqli_fetch_array($classes)) { 
-                    include("infoBox.php");                    
+                    include("php/infoBox.php");                    
                 }
                 mysqli_free_result($classes);
                 mysqli_close($conn);
