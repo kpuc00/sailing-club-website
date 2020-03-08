@@ -62,7 +62,7 @@ $getnavpic->close();
                     echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a></div>";
                 }
                 else if(isset($_SESSION['loggedin'])){
-                    echo "<div class='profilebtn'><a href='profile.php'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."'> " . $_SESSION['displayname'];
+                    echo "<div class='profilebtn'><a href='profile.php'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."' align='middle'> " . $_SESSION['displayname'];
                     echo "</a>";
                     echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a></div>";
                 }

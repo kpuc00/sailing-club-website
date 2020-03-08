@@ -6,7 +6,7 @@ require 'php/includes.php';
 <html>
 
 <head>
-    <title>Sailing club Fontys</title>
+    <title>SC Fontys</title>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -19,7 +19,10 @@ require 'php/includes.php';
        <?php require_once("php/navbar.php"); ?>
     </nav>
 
-    <div class="content">   
+    <div class="content">
+
+    <h1>Welcome to Sailing Club Fontys</h1>
+
         <div class="leftColumn">
             <?php 
                 require_once("fetchData/getClasses.php"); 
