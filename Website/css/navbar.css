@@ -1,8 +1,10 @@
 nav {
     overflow: hidden;
     background-color: #666666;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     max-width: 60vw;
+    max-height: 46px;
     min-width: 645px;
     margin-left: auto;
     margin-right: auto;
@@ -67,7 +69,7 @@ nav a:hover,
     position: absolute;
     background-color: #666666;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
 
@@ -89,13 +91,7 @@ nav a:hover,
 }
 
 .profilebtn {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-}
-
-.profilebtn {
-    max-height: 46px;
+    max-height: 100%;
     text-align: center;
 }
 

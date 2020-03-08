@@ -29,6 +29,9 @@ if ($stmt = $conn->prepare('SELECT id, password, displayname FROM accounts WHERE
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['displayname'] = $displayname;
             $_SESSION['id'] = $id;
+            //update lastlogin
+            $query = mysqli_query($conn,"UPDATE accounts SET lastlogin = NOW() WHERE username = '".$_SESSION['username']."'");
+            //redirect to homepage
             header('Location: ../index.php');
         } else {
             //echo 'Incorrect password!';

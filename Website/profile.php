@@ -12,28 +12,20 @@ if (!isset($_SESSION['loggedin'])) {
 //database connection
 require 'fetchData/connection.php';
 
-// We don't have the password or email info stored in sessions so instead we can get the results from the database.
-$stmt = $conn->prepare('SELECT password, email FROM accounts WHERE id = ?');
-// In this case we can use the account ID to get the account info.
-$stmt->bind_param('i', $_SESSION['id']);
-$stmt->execute();
-$stmt->bind_result($password, $email);
-$stmt->fetch();
-$stmt->close();
-
 //upload profilepic
 if(isset($_POST['submit'])){
 	move_uploaded_file($_FILES['file']['tmp_name'],"images/profilepictures/".$_FILES['file']['name']);
 	$q = mysqli_query($conn,"UPDATE accounts SET profilepicture = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 }
 
-//get user picture path from database
-$getpic = $conn->prepare('SELECT profilepicture FROM accounts WHERE id = ?');
-$getpic->bind_param('i', $_SESSION['id']);
-$getpic->execute();
-$getpic->bind_result($profilepic);
-$getpic->fetch();
-$getpic->close();
+// We don't have the password, email and other info stored in sessions so instead we can get the results from the database.
+$stmt = $conn->prepare('SELECT password, email, profilepicture, usertype, registerdate, lastlogin FROM accounts WHERE id = ?');
+// In this case we can use the account ID to get the account info.
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->bind_result($password, $email, $profilepic, $usertype, $registerdate, $lastlogin);
+$stmt->fetch();
+$stmt->close();
 
 ?>
 
@@ -76,6 +68,18 @@ $getpic->close();
 					<tr>
 						<td>Email:</td>
 						<td><?=$email?></td>
+					</tr>
+					<tr>
+						<td>User type:</td>
+						<td><?=$usertype?></td>
+					</tr>
+					<tr>
+						<td>Register date:</td>
+						<td><?=$registerdate?></td>
+					</tr>
+					<tr>
+						<td>Last login:</td>
+						<td><?=$lastlogin?></td>
 					</tr>
 				</table>
 	</div>
