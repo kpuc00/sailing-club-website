@@ -1,5 +1,22 @@
 <?php
 require 'php/includes.php';
+
+//database connection
+require 'fetchData/connection.php';
+
+//get user picture path for username kpuc from database
+$getpickpuc = $conn->prepare('SELECT profilepicture FROM accounts WHERE id = 1');
+$getpickpuc->execute();
+$getpickpuc->bind_result($pickpuc);
+$getpickpuc->fetch();
+$getpickpuc->close();
+
+//get user picture path for username michael from database
+$getpicmichael = $conn->prepare('SELECT profilepicture FROM accounts WHERE id = 2');
+$getpicmichael->execute();
+$getpicmichael->bind_result($picmichael);
+$getpicmichael->fetch();
+$getpicmichael->close();
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +38,6 @@ require 'php/includes.php';
 
         <h1>Contact</h1>
 
-        <div class="rightColumn">
-            <h3>Feel free to message us. We will respond you as soon as we can!</h3>
-            <h4>Coaches:</h4>
-            <p><strong>Kristiyan Strahilov</strong><br>k.strahilov@student.fontys.nl</p>
-            <p><strong>Michael Groenewegen van der Weijden</strong><br>m.groenewegenvanderweijden@student.fontys.nl</p>
-        </div>
-
         <div class="leftColumn">
 
             <div class="form">
@@ -48,6 +58,21 @@ require 'php/includes.php';
                 </form>
             </div>
 
+        </div>
+
+        <div class="rightColumn">
+            <h3>Feel free to message us. We will respond you as soon as we can!</h3>
+            <h4>Coaches:</h4>
+            <p>
+                <?php echo "<img class='profilepic' src='images/profilepictures/". $pickpuc . "'><br>"?>
+                <strong>Kristiyan Strahilov</strong><br>
+                k.strahilov@student.fontys.nl
+            </p>
+            <p>
+                <?php echo "<img class='profilepic' src='images/profilepictures/". $picmichael . "'><br>"?>
+                <strong>Michael Groenewegen van der Weijden</strong><br>
+                m.groenewegenvanderweijden@student.fontys.nl
+            </p>
         </div>
 
     </div>

@@ -14,12 +14,19 @@
 
 .leftColumn {
     grid-column: 1/ 2;
+    grid-row: 2/3;
 }
 
 .rightColumn {
     padding-left: 10px;
     grid-column: 2/ 3;
+    grid-row: 2/3;
     text-align: center;
+}
+
+.profilepic {
+    max-width: 50%;
+    border-radius: 50%;
 }
 
 h1 {
@@ -82,13 +89,17 @@ input[type=submit]:hover {
     }
     .leftColumn {
         grid-column: 1/ 2;
-        grid-row: unset;
+        grid-row: 3/4;
         justify-content: center;
     }
     .rightColumn {
         grid-column: 1/ 2;
-        grid-row: unset;
+        grid-row: 2/3;
         padding-left: 10px;
-        text-align: justify;
+        text-align: center;
+    }
+    .profilepic {
+        max-width: 20%;
+        border-radius: 50%;
     }
 }
