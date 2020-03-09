@@ -15,18 +15,14 @@ require 'php/includes.php';
 <html>
 <head>
     <title>Class</title>
+    <?php require_once("php/head.php");?>
     <link rel="stylesheet" type="text/css" href="css/class.css">
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-
-    <nav>
-        <?php require_once("php/navbar.php"); ?>
-    </nav>
+    
+    <?php require_once("php/navbar.php"); ?>
 
     <div class="class_content">
         

@@ -33,20 +33,16 @@ $stmt->close();
 <html>
 
 <head>
-    <title>Profile</title>
+	<title>Profile</title>
+	<?php require_once("php/head.php");?>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-    <nav>
-        <?php require_once("php/navbar.php"); ?>
-    </nav>
+	<?php require_once("php/navbar.php"); ?>
 
     <div class="content">
 
@@ -95,7 +91,7 @@ $stmt->close();
 	?>
 	<h4>Upload new profile picture.</h4>
 	<form action="" method="post" enctype="multipart/form-data">
-			<input type="file" name="file">
+			<input type="file" name="file" accept="image/x-png,image/gif,image/jpeg">
 			<br><br>
 			<input type="submit" name="submit" value="Upload new picture">
 		</form>

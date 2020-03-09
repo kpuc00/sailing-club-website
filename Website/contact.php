@@ -7,23 +7,26 @@ require 'php/includes.php';
 
 <head>
     <title>Contact</title>
+    <?php require_once("php/head.php");?>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/contact.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-    <nav>
-        <?php require_once("php/navbar.php"); ?>
-    </nav>
+    <?php require_once("php/navbar.php"); ?>
 
     <div class="content">
 
         <h1>Contact</h1>
+
+        <div class="rightColumn">
+            <h3>Feel free to message us. We will respond you as soon as we can!</h3>
+            <h4>Coaches:</h4>
+            <p><strong>Kristiyan Strahilov</strong><br>k.strahilov@student.fontys.nl</p>
+            <p><strong>Michael Groenewegen van der Weijden</strong><br>m.groenewegenvanderweijden@student.fontys.nl</p>
+        </div>
 
         <div class="leftColumn">
 
@@ -45,13 +48,6 @@ require 'php/includes.php';
                 </form>
             </div>
 
-        </div>
-
-        <div class="rightColumn">
-            <h3>Feel free to message us. We will respond you as soon as we can!</h3>
-            <h4>Coaches:</h4>
-            <p><strong>Kristiyan Strahilov</strong><br>k.strahilov@student.fontys.nl</p>
-            <p><strong>Michael Groenewegen van der Weijden</strong><br>m.groenewegenvanderweijden@student.fontys.nl</p>
         </div>
 
     </div>

@@ -12,10 +12,10 @@ $getnavpic->close();
 
 <body onresize="showMenu()">
 <nav>
-<div class="hamburger"><a href="javascript:void(0);" onclick="expandMenu()" title="Expand Menu"><i class='fa fa-bars'></i></a></div>
-  <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
+<div class="hamburger"><a href="javascript:void(0);" onclick="expandMenu()"><i class='fa fa-bars'></i></a></div>
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
   <div id="hiddenlinks">
-  <a href="about.php"><i class="fa fa-info"></i> About us</a>
+  <a href="#"><i class="fa fa-info"></i> About us</a>
   <div class="dropdown">
             <button class="dropbtn">
                 <i class="fa fa-anchor"></i> Classes <i class="fa fa-caret-down"></i>
@@ -50,22 +50,21 @@ $getnavpic->close();
                 ?>    
             </div>
         </div>
-  <a href="contact.php"><i class="fa fa-address-card"></i> Contact</a>
+  <a href="#"><i class="fa fa-address-card"></i> Contact</a>
   <div class="right-button">
   <?php
                 if(isset($_SESSION['loggedin']) && $navprofilepic ==""){
+                    echo "<div class='profilebtn'><a href='profile.php'><img class='navprofilepic' src='images/profilepictures/default.png'> " . $_SESSION['displayname'];
+                    echo "</a></div>";
                     echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
-                    echo "<div class='profilebtn'><a href='profile.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='images/profilepictures/default.png'> <span>" . $_SESSION['displayname'];
-                    echo "</span></marquee></a></div>";
                 }
                 else if(isset($_SESSION['loggedin'])){
+                    echo "<div class='profilebtn'><a href='profile.php'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."' align='middle'> " . $_SESSION['displayname'];
+                    echo "</a></div>";
                     echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
-                    echo "<div class='profilebtn'><a href='profile.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."'> <span>" . $_SESSION['displayname'];
-                    echo "</span></marquee></a></div>";
-                    
                 }
                 else{
-                    echo "<a href='login.php'><i class='fa fa-sign-in'></i> Login</a></div>";
+                    echo "<a href='login.php'><i class='fa fa-sign-in'></i> Login</a></li>";
                 }
             ?>
     </div>
@@ -83,7 +82,7 @@ function expandMenu() {
 }
 
 function showMenu() {
-    if (document.body.clientWidth > 760) {
+    if (document.body.clientWidth > 784) {
         x.style.display = "block";
     } else {
         x.style.display = "none";

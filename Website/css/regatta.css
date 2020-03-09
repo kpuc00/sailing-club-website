@@ -3,14 +3,14 @@
     border-radius: 10px;
     padding: 20px;
     min-height: 50vh;
-    max-width: 100vw;
-    min-width: 560px;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    min-width: 720px;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-form>input[type="submit"] {
+form input[type="submit"] {
     font-family: 'Roboto';
     background-color: #666666;
     color: white;
@@ -22,7 +22,7 @@ form>input[type="submit"] {
     cursor: pointer;
 }
 
-form>input[type="submit"]:hover {
+form input[type="submit"]:hover {
     background-color: #4ea9ff;
 }
 
@@ -48,4 +48,18 @@ th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+@media (max-width: 776px) {
+    .content {
+        background-color: rgba(112, 112, 112, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        min-height: 50vh;
+        max-width: 100vw;
+        min-width: unset;
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    }
 }

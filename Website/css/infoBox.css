@@ -1,9 +1,10 @@
 .infoBox {
     position: relative;
-    height: 300px;
-    width: 250px;
-    border-radius: 15px;
+    height: 19em;
+    width: 16em;
+    border-radius: 1em;
     float: left;
+    padding: 1px;
     margin: 1vh 1vw;
 }
 
@@ -61,4 +62,11 @@
 
 .infoBox .box:hover .context p h3 {
     font-size: 15px;
+}
+
+@media (max-width: 776px) {
+    .infoBox {
+        height: 19em;
+        width: 80%;
+    }
 }
