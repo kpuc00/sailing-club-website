@@ -8,8 +8,8 @@
     <body>        
         <img src="images/SCF.png" alt="SCF Logo" width="10%">
         <br>
-        <a href=""><i class="fa fa-address-card"></i> Contact</a>
-        <a href=""><i class="fa fa-sitemap"></i> Sitemap</a>
+        <a href="contact.php"><i class="fa fa-address-card"></i> Contact</a>
+        <a href="#"><i class="fa fa-sitemap"></i> Sitemap</a>
         <br>
         <br><strong>Social networks:</strong><br>
         <a href="https://www.facebook.com/kristiyanstrahilov" target="_blank"><i class="fa fa-facebook"></i> Kristiyan Strahilov</a>

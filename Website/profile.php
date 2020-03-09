@@ -46,7 +46,7 @@ $stmt->close();
 
     <div class="content">
 
-	<h1>Profile</h1>
+	<h1>Account</h1>
 
 	<div class="leftColumn">
 			<h3>Welcome back, <?=$_SESSION['displayname']?>!</h3>
