@@ -78,7 +78,7 @@ input[type=submit]:hover {
     .rightColumn {
         grid-column: 1/ 2;
         grid-row: 2/3;
-        padding-left: 10px;
+        padding-left: unset;
         text-align: center;
     }
     .profilepic {

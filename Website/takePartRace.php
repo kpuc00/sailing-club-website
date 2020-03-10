@@ -1,3 +1,7 @@
+<?php
+require 'php/includes.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

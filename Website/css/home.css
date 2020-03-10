@@ -17,6 +17,7 @@
     grid-column: 1/ 2;
     grid-row: 2/ 3;
     justify-content: center;
+    text-align: center;
 }
 
 .rightColumn {
@@ -32,6 +33,10 @@ h1 {
     text-align: center;
     font-size: 30px;
     color: #4ea9ff;
+}
+
+.infoboxcontainer {
+    text-decoration: none;
 }
 
 @media (max-width: 776px) {
@@ -51,14 +56,17 @@ h1 {
     }
     .leftColumn {
         grid-column: 1/ 2;
-        grid-row: unset;
+        grid-row: 3/4;
         justify-content: center;
     }
     .rightColumn {
         grid-column: 1/ 2;
-        grid-row: unset;
-        padding-left: 10px;
+        grid-row: 2/3;
+        padding-left: unset;
         text-align: justify;
+    }
+    h1 {
+        grid-row: 1/2;
     }
 }
 

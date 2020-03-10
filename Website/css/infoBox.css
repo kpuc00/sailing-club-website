@@ -57,11 +57,11 @@
 .infoBox .box:hover .context {
     top: 25%;
     opacity: 1;
-    font-size: 15px;
+    font-size: 0.8em;
 }
 
 .infoBox .box:hover .context p h3 {
-    font-size: 15px;
+    font-size: 0.8em;
 }
 
 @media (max-width: 776px) {

@@ -20,6 +20,19 @@ require 'php/includes.php';
 
     <h1>Welcome to Sailing Club Fontys</h1>
 
+        <div class="leftColumn">
+            <div class="infoboxcontainer">
+            <?php 
+                require_once("fetchData/getClasses.php"); 
+                while ($row = mysqli_fetch_array($classes)) { 
+                    include("php/infoBox.php");                    
+                }
+                mysqli_free_result($classes);
+                mysqli_close($conn);
+            ?>
+            </div>
+        </div>
+
         <div class="rightColumn">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam vitae omnis et autem quo minus quisquam tenetur? Temporibus pariatur accusamus quo, eaque ut voluptatem error, optio itaque voluptas ipsa voluptate?</p>
             
@@ -35,18 +48,6 @@ require 'php/includes.php';
                     mysqli_close($conn);
                 ?> 
             </ul>
-
-        </div>
-
-        <div class="leftColumn">
-            <?php 
-                require_once("fetchData/getClasses.php"); 
-                while ($row = mysqli_fetch_array($classes)) { 
-                    include("php/infoBox.php");                    
-                }
-                mysqli_free_result($classes);
-                mysqli_close($conn);
-            ?>
         </div>
 
     </div>
