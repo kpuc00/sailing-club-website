@@ -72,7 +72,7 @@ $getnavpic->close();
   </div>
 
   <script>
-      var x = document.getElementById("hiddenlinks");
+      let x = document.getElementById("hiddenlinks");
 
 function expandMenu() {
     if (x.style.display === "block") {
