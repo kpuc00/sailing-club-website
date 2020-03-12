@@ -2,13 +2,13 @@
 require 'php/includes.php';
 ?>
 
+
 <?php 
+/*
     require_once("fetchData/connection.php");
     require_once("fetchData/GetClassID_Name.php");
-    //$className1 =  $_GET['className'];
     $classID = $_GET['classID'];
-
-
+*/    
 ?>
 
 <!DOCTYPE html>
@@ -27,13 +27,16 @@ require 'php/includes.php';
     <div class="class_content">
         
         <div class="class_title">
-            <?php echo $classID; ?>
+            <?php 
+                require_once("fetchData/getClassName.php");
+            ?>        
         </div>
 
         <div class="class_description">
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, fugiat delectus? Quae in, sunt ab eum eligendi
-                vitae nulla expedita quidem, corporis quibusdam, possimus aperiam distinctio. Corrupti illum quas quasi!
+                <?php
+                    require_once("fetchData/getClassDescription.php");
+                ?>  
             </p>
         </div>
 
@@ -57,9 +60,9 @@ require 'php/includes.php';
 
             <div class="coach_description">
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, quis voluptate corrupti, 
-                    deserunt voluptas modi esse, voluptatibus eligendi quam perferendis hic itaque porro cupiditate? 
-                    Dolore natus praesentium optio nemo mollitia.
+                    <?php
+                        require_once("fetchData/getCoachDescription.php");
+                    ?>
                 </p>
             </div>
             
