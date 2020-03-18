@@ -8,7 +8,7 @@
     <body>
 
         <div class="infoBox">
-            <a href="class.php?classID=<?php echo $row["classID"] ?>>">
+            <a href="class.php?classID=<?php echo $row["classID"] ?>">
                 <div class="box">
                     <img src="images/laser-logo.png">
                     <div class="context">
