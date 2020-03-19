@@ -15,7 +15,7 @@
 
     <div class="form">
 
-        <form action="fetchData/insertClass.php" method="POST">
+        <form action="fetchData/insertClass.php" method="POST" enctype="multipart/form-data">
         <h3>Enter the class details:</h3>
 
         <hr>
@@ -24,7 +24,7 @@
         <textarea id="subject" name="classDescription" placeholder="Class Description" style="height:200px" required></textarea>
 
         <p>Choose picture</p>
-        <input type="file" name="classLogo" accept="image/x-png,image/gif,image/jpeg"> 
+        <input type="file" name="file" accept="image/x-png,image/gif,image/jpeg"> 
     
 
         <hr>

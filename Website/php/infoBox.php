@@ -10,7 +10,9 @@
         <div class="infoBox">
             <a href="class.php?classID=<?php echo $row["classID"] ?>">
                 <div class="box">
-                    <img src="images/laser-logo.png">
+                    <?php
+                        echo "<img src='images/class-logos/".$row['classLogo']."'>";
+                    ?>
                     <div class="context">
                         <h3><?php echo $row["ClassName"]; ?></h3>
                         <p><?php echo $row["ClassDescription"]; ?></p>

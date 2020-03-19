@@ -1,11 +1,14 @@
 <?php
     require("connection.php");
+
     
     $className = $_POST["className"];
     $classDescription = $_POST["classDescription"];
-    $classLogo = $_POST["classLogo"];
+    $classLogo = $_FILES["file"]["name"];
 
-    $query = "CALL InsertClass('$className', '$classDescription', '$classPicture')";
+    move_uploaded_file($_FILES['file']['tmp_name'],"../images/class-logos/".$_FILES['file']['name']);
+
+    $query = "CALL InsertClass('$className', '$classDescription', '$classLogo')";
     
     mysqli_query($conn, $query);
     mysqli_close($conn);

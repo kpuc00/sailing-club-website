@@ -15,7 +15,7 @@
         $coachPicture = $_POST["coachPicture"];
         $classId = $data["classID"];
 
-        $query = "CALL InsertCoach('$coachName', '$coacLastName', '$coachDescription', '$coachPicture', '$classId')";
+        $query = "CALL InsertCoach('$coachName', '$coacLastName', '$coachDescription', '$coachPicture', $classId)";
         mysqli_query($conn, $query);
         mysqli_close($conn);
         header("Location: ../index.php");
