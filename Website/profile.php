@@ -19,11 +19,11 @@ if(isset($_POST['submit'])){
 }
 
 // We don't have the password, email and other info stored in sessions so instead we can get the results from the database.
-$stmt = $conn->prepare('SELECT password, email, profilepicture, usertype, registerdate, lastlogin FROM accounts WHERE id = ?');
+$stmt = $conn->prepare('SELECT password, email, profilepicture, registerdate, lastlogin FROM accounts WHERE id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($password, $email, $profilepic, $usertype, $registerdate, $lastlogin);
+$stmt->bind_result($password, $email, $profilepic, $registerdate, $lastlogin);
 $stmt->fetch();
 $stmt->close();
 
@@ -67,7 +67,7 @@ $stmt->close();
 					</tr>
 					<tr>
 						<td>User type:</td>
-						<td><?=$usertype?></td>
+						<td><?=$_SESSION['usertype']?></td>
 					</tr>
 					<tr>
 						<td>Register date:</td>
