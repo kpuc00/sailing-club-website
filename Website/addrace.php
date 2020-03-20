@@ -4,6 +4,7 @@
     <?php require_once("php/head.php");?>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
+    <script type="text/javascript" src="javascript/validateRaceInput.js"></script>
 </head>
 <body>
     
@@ -15,12 +16,12 @@
 
     <div class="form">
 
-        <form action="fetchData/insertRace.php" method="POST">
+        <form action="fetchData/insertRace.php" method="POST" onsubmit="return validate()">
         <h3>Enter the race details:</h3>
 
         <hr>
         
-        <input type="title" id="username" name="raceName" placeholder="Title" required>      
+        <input type="title" id="raceName" name="raceName" placeholder="Title">      
 
         <hr>
 

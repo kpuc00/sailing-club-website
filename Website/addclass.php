@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <?php require_once("php/head.php");?>
-    <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="css/add.css">
-</head>
-<body>
-    
-<?php require_once("php/navbar.php"); ?>
+    <head>
+        <?php require_once("php/head.php");?>
+        <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
+        <link rel="stylesheet" type="text/css" href="css/add.css">
 
-<div class="content">
+        <script type="text/javascript" src="javascript/validateClassInput.js"></script>
 
-    <h1>Add Class</h1>
-
-    <div class="form">
-
-        <form action="fetchData/insertClass.php" method="POST" enctype="multipart/form-data">
-        <h3>Enter the class details:</h3>
-
-        <hr>
+    </head>
+    <body>
         
-        <input type="title" id="username" name="className" placeholder="Class Name" required>
-        <textarea id="subject" name="classDescription" placeholder="Class Description" style="height:200px" required></textarea>
+    <?php require_once("php/navbar.php"); ?>
 
-        <p>Choose picture</p>
-        <input type="file" name="file" accept="image/x-png,image/gif,image/jpeg"> 
-    
+    <div class="content">
 
-        <hr>
+        <h1>Add Class</h1>
 
-        <input type="submit" name="submit" value="Add Race">
+        <div class="form">
 
-        </form>
+            <form action="fetchData/insertClass.php" method="POST" onsubmit="return validate()" enctype="multipart/form-data">
+            <h3>Enter the class details:</h3>
+
+            <hr>
+            
+            <input type="title" id="className" name="className" placeholder="Class Name"> 
+
+            <textarea id="subject" id="classDescription" name="classDescription" placeholder="Class Description" style="height:200px"></textarea>
+            
+            <br>
+            <p>Choose picture</p>
+            <input type="file" id="classPicture" name="file" accept="image/x-png,image/gif,image/jpeg"> 
+        
+
+            <hr>
+
+            <input type="submit" name="submit" value="Add Race">
+
+            </form>
+        </div>
+
     </div>
 
-</div>
+    <footer>
+        <?php require_once("php/footer.php"); ?>
+    </footer>
 
-<footer>
-    <?php require_once("php/footer.php"); ?>
-</footer>
-</body>
+
+
+    </body>
 </html>
