@@ -18,6 +18,11 @@ if(isset($_POST['submit'])){
 	$q = mysqli_query($conn,"UPDATE accounts SET profilepicture = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 }
 
+//remove profilepic
+if(isset($_POST['removepic'])){
+	$remove = mysqli_query($conn,"UPDATE accounts SET profilepicture = 'default.png' WHERE username = '".$_SESSION['username']."'");
+}
+
 // We don't have the password, email and other info stored in sessions so instead we can get the results from the database.
 $stmt = $conn->prepare('SELECT password, email, profilepicture, registerdate, lastlogin FROM accounts WHERE id = ?');
 // In this case we can use the account ID to get the account info.
@@ -58,10 +63,6 @@ $stmt->close();
 						<td><?=$_SESSION['username']?></td>
 					</tr>
 					<tr>
-						<td>Password:</td>
-						<td><?=$password?></td>
-					</tr>
-					<tr>
 						<td>Email:</td>
 						<td><?=$email?></td>
 					</tr>
@@ -70,12 +71,12 @@ $stmt->close();
 						<td><?=$_SESSION['usertype']?></td>
 					</tr>
 					<tr>
-						<td>Register date:</td>
-						<td><?=$registerdate?></td>
-					</tr>
-					<tr>
 						<td>Last login:</td>
 						<td><?=$lastlogin?></td>
+					</tr>
+					<tr>
+						<td>Register date:</td>
+						<td><?=$registerdate?></td>
 					</tr>
 				</table>
 	</div>
@@ -94,6 +95,7 @@ $stmt->close();
 			<input type="file" name="file" accept="image/x-png,image/gif,image/jpeg">
 			<br><br>
 			<input type="submit" name="submit" value="Upload new picture">
+            <input type="submit" name="removepic" value="Remove picture">
 		</form>
 	</div>
 

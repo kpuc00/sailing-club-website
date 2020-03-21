@@ -53,16 +53,25 @@ $getnavpic->close();
   <a href="contact.php"><i class="fa fa-address-card"></i> Contact</a>
   <div class="right-button">
   <?php
-                if(isset($_SESSION['loggedin']) && $navprofilepic ==""){
+                if(isset($_SESSION['loggedin']) && $navprofilepic =="default.png" && $_SESSION['usertype'] == "User"){
                     echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
                     echo "<div class='profilebtn'><a href='profile.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='images/profilepictures/default.png'> <span>" . $_SESSION['displayname'];
                     echo "</span></marquee></a></div>";
                 }
-                else if(isset($_SESSION['loggedin'])){
+                else if(isset($_SESSION['loggedin']) && $_SESSION['usertype'] == "User"){
                     echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
                     echo "<div class='profilebtn'><a href='profile.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."'> <span>" . $_SESSION['displayname'];
+                    echo "</span></marquee></a></div>"; 
+                }
+                else if(isset($_SESSION['loggedin']) && $navprofilepic =="default.png" && $_SESSION['usertype'] == "Admin"){
+                    echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
+                    echo "<div class='profilebtn'><a href='adminpage.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='images/profilepictures/default.png'> <span>" . $_SESSION['displayname'];
                     echo "</span></marquee></a></div>";
-                    
+                }
+                else if(isset($_SESSION['loggedin']) && $_SESSION['usertype'] == "Admin"){
+                    echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
+                    echo "<div class='profilebtn'><a href='adminpage.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."'> <span>" . $_SESSION['displayname'];
+                    echo "</span></marquee></a></div>"; 
                 }
                 else{
                     echo "<a href='login.php'><i class='fa fa-sign-in'></i> Login</a></div>";

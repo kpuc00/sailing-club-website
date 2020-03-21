@@ -20,10 +20,6 @@ nav a {
     font-size: 17px;
 }
 
-nav a:hover {
-    background-color: #000;
-}
-
 .active {
     background-color: #4ea9ff;
     display: block;
