@@ -22,11 +22,11 @@
         <hr>
         
         <input type="title" id="raceName" name="raceName" placeholder="Title">      
-
+        <div id="addRaceError"></div>
         <hr>
 
         <input type="submit" name="submit" value="Add Race">
-
+        
         </form>
     </div>
 
