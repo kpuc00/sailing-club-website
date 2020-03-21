@@ -10,13 +10,13 @@
         require("connection.php");
         $data = mysqli_fetch_array($result);
         
-        $coachName = $_POST["coachName"];
-        $coacLastName = $_POST["coachLastName"];
+        $coachName = $_POST["coachFirstName"];
+        $coachLastName = $_POST["coachLastName"];
         $coachDescription = $_POST["coachDescription"];
         $coachPicture = $_POST["coachPicture"];
         $classId = $data["classID"];
 
-        $query1 = "CALL InsertCoach('$coachName', '$coacLastName', '$coachDescription', '$coachPicture', '$classId')";
+        $query1 = "CALL InsertCoach('$coachName', '$coachLastName', '$coachDescription', '$coachPicture', '$classId')";
         mysqli_query($conn, $query1);
         mysqli_close($conn);
         header("Location: ../index.php");

@@ -4,6 +4,7 @@
     <?php require_once("php/head.php");?>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
+    
     <script type="text/javascript" src="javascript/validateRaceInput.js"></script>
 </head>
 <body>

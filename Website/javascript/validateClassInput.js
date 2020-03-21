@@ -64,7 +64,7 @@ function validate() {
             true;
         }
         else{
-            alert("file must be .png")
+            alert("file must be .png");
             classPictureError.textContent = "A file must be png type!";
             classPictureError.style.color = "red";
             return false;
