@@ -1,5 +1,5 @@
 .content {
-    background-color: rgba(112, 112, 112, 0.2);
+    background-color: rgba(112, 112, 112, 0.3);
     border-radius: 10px;
     padding: 20px;
     display: grid;
@@ -14,29 +14,60 @@
 
 .leftColumn {
     grid-column: 1/ 2;
-    grid-row: 2/ 3;
-    justify-content: center;
-    text-align: center;
 }
 
 .rightColumn {
-    grid-column: 2/ 3;
-    grid-row: 2/ 3;
+    width: 100%;
     padding-left: 10px;
-    padding-right: 10px;
-    text-align: justify;
+    grid-column: 2/ 3;
+    text-align: center;
+}
+
+.profilepic {
+    max-width: 70%;
+    border-radius: 50%;
 }
 
 h1 {
     grid-column: 1/ 3;
-    margin-bottom: 2em;
     text-align: center;
     font-size: 30px;
-    color: #4ea9ff;
+    color: #ff4e4e;
 }
 
-.infoboxcontainer {
+.button {
+    background-color: #666666;
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
     text-decoration: none;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button:hover {
+    background-color: #4ea9ff;
+}
+
+input[type=file] {
+    font-family: 'Roboto';
+}
+
+input[type=submit] {
+    font-family: 'Roboto';
+    background-color: #666666;
+    color: white;
+    font-weight: bold;
+    margin: 2px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #ff4e4e;
 }
 
 @media (max-width: 776px) {
@@ -46,6 +77,7 @@ h1 {
         padding: 20px;
         display: grid;
         grid-template-columns: 100%;
+        grid-template-rows: none;
         min-height: 50vh;
         max-width: 100vw;
         min-width: unset;
@@ -62,38 +94,9 @@ h1 {
         grid-column: 1/ 2;
         grid-row: 2/3;
         padding-left: unset;
-        text-align: justify;
+        text-align: center;
     }
-    h1 {
-        grid-row: 1/2;
+    .profilepic {
+        max-width: 50%;
     }
 }
-
-
-/*Regatta links styling start*/
-
-.rightColumn .linkFormat {
-    margin: 5% auto;
-    text-align: center;
-    list-style-type: none;
-}
-
-.rightColumn .linkFormat li {
-    padding-top: 5vh;
-}
-
-.rightColumn .linkFormat a {
-    color: blue;
-    text-decoration: none;
-}
-
-.rightColumn .linkFormat a:hover {
-    text-decoration: underline;
-}
-
-.rightColumn .linkFormat a:visited {
-    color: darkblue;
-}
-
-
-/*Regattalinks styling end*/
