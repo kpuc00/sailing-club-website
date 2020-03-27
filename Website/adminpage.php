@@ -37,7 +37,6 @@ $getprofpic->bind_result($profilepic);
 $getprofpic->fetch();
 $getprofpic->close();
 
-//Look here i changed somthing and now the profile picture does not work please look into it
 // We don't have the password, email and other info stored in sessions so instead we can get the results from the database.
 $stmt = $conn->prepare('SELECT * FROM accounts');
 // In this case we can use the account ID to get the account info.
@@ -74,6 +73,7 @@ mysqli_close($conn);
 
         <div class="leftColumn">
             <h3>Welcome back, <?= $_SESSION['displayname'] ?>!</h3>
+            <a class="button" href='messages.php' title='Messages'>Messages</a>
             <h3>List of registered users:</h3>
 
             <table>
@@ -142,7 +142,7 @@ mysqli_close($conn);
         <?php echo "<img class='profilepic' src='images/profilepictures/".$profilepic."'>";	?>
 
         <h3><?= $_SESSION['displayname'] ?></h3>
-        <a class="button" href='profile.php' title='Profile'>Edit profile</a>
+        <a class="button" href='profile.php' title='Edit profile'>Edit profile</a>
 
         </div>
 
