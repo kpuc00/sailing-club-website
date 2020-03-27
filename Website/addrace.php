@@ -4,6 +4,7 @@
     <?php require_once("php/head.php");?>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
+    
     <script type="text/javascript" src="javascript/validateRaceInput.js"></script>
 </head>
 <body>
@@ -22,11 +23,11 @@
         <hr>
         
         <input type="title" id="raceName" name="raceName" placeholder="Title">      
-
+        <div id="addRaceError"></div>
         <hr>
 
         <input type="submit" name="submit" value="Add Race">
-
+        
         </form>
     </div>
 

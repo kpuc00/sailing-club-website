@@ -11,7 +11,6 @@ require 'php/includes.php';
 
     $query2 = "CALL GetRaceName($regattaID)";
     $result2 = mysqli_query($conn, $query2);
-    echo $result2;
 ?>
 
 <!DOCTYPE html>
@@ -30,12 +29,21 @@ require 'php/includes.php';
     <?php require_once("php/navbar.php"); ?>  
 
     <div class="content">
-        
-        <form action="takePartRace.php" target="_self">
-            <input type="submit" value="Take part"/>
-        </form> 
 
-        <?php echo '<h1>' . $result2 . '</h1>'; ?>
+        <?php if(isset($_SESSION['loggedin'])){ ?>
+            <a href="takePartRace.php?regattaID=<?php echo $regattaID; ?>">
+                <input type="submit" value="Take part"/>
+            </a>
+        <?php
+        } 
+        else { ?>
+            <a href="login.php">
+                <input type="submit" value="Take part"/>
+            </a>            
+        <?php
+        }
+        ?>
+        
         <table>
             <tr>
                 <th>ID</th>

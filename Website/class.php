@@ -15,29 +15,23 @@ require 'php/includes.php';
 <html>
 <head>
     <title>Class</title>
-    <?php require_once("php/head.php");?>
+    <?php require("php/head.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/class.css">
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
 </head>
 <body>
     
-    <?php require_once("php/navbar.php"); ?>
+    <?php require("php/navbar.php"); ?>
 
     <div class="class_content">
-        
+
         <div class="class_title">
-            <?php 
-                require_once("fetchData/getClassName.php");
-            ?>        
+            <?php require_once("fetchData/getClassName.php"); ?>
         </div>
 
         <div class="class_description">
-            <p>
-                <?php
-                    require_once("fetchData/getClassDescription.php");
-                ?>  
-            </p>
+            <p><?php require_once("fetchData/getClassDescription.php"); ?></p>
         </div>
 
         <div class="timetable">
@@ -53,17 +47,17 @@ require 'php/includes.php';
         </div>
         
         <div class="coach_content">
-
+            <?php
+                require("fetchData/getCoachByClassId.php");
+            ?>
             <div class="coach_picture">
-                <p>PictureOfCoach</p>
+                <img src="images/coach-images/<?php echo $data["coachPicture"]; ?>" alt="">
+
+                <p><?php echo $data["coachName"] . " " . $data["coachLastName"]; ?></p>
             </div>
 
             <div class="coach_description">
-                <p>
-                    <?php
-                        require_once("fetchData/getCoachDescription.php");
-                    ?>
-                </p>
+                <p><?php echo $data["coachDescription"]; ?></p>
             </div>
             
         </div>
