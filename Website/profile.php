@@ -82,13 +82,7 @@ $stmt->close();
 	</div>
 
 	<div class="rightColumn">
-	<?php
-        if($profilepic == "default.png"){
-            echo "<img class='profilepic' src='images/profilepictures/default.png'>";
-        } else {
-            echo "<img class='profilepic' src='images/profilepictures/".$profilepic."'>";
-		}
-	?>
+	<?php echo "<img class='profilepic' src='images/profilepictures/".$profilepic."'>"; ?>
 	<h3><?=$_SESSION['displayname']?></h3>
 	<?php 
 	if($_SESSION['usertype'] == "Admin"){

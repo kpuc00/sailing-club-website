@@ -28,6 +28,14 @@ if (isset($_POST['removepic'])) {
     $remove = mysqli_query($conn, "UPDATE accounts SET profilepicture = 'default.png' WHERE username = '" . $_SESSION['username'] . "'");
 }
 
+// Get user's profile picture name from the database.
+$getprofpic = $conn->prepare('SELECT profilepicture FROM accounts WHERE id = ?');
+// In this case we can use the account ID to get the account info.
+$getprofpic->bind_param('i', $_SESSION['id']);
+$getprofpic->execute();
+$getprofpic->bind_result($profilepic);
+$getprofpic->fetch();
+$getprofpic->close();
 
 //Look here i changed somthing and now the profile picture does not work please look into it
 // We don't have the password, email and other info stored in sessions so instead we can get the results from the database.
@@ -38,7 +46,7 @@ $stmt->fetch();
 $stmt->close();
 
 //get all registered users
-$getusersquery = "SELECT id, username, email, usertype, lastlogin FROM accounts ORDER BY id";
+$getusersquery = "SELECT id, username, email, usertype, lastlogin, profilepicture FROM accounts ORDER BY id";
 $getusers = mysqli_query($conn, $getusersquery);
 
 
@@ -70,17 +78,17 @@ mysqli_close($conn);
 
             <table>
             <tr>
-                <th>Username</th>
+                <th colspan="2">Username</th>
                 <th>E-mail</th>
                 <th>Last login</th>
                 <th>Type</th>
-                <th></th>
-                <th></th>
+                <th colspan="2">Manage</th>
             </tr>
             <?php 
 
             while($row = mysqli_fetch_assoc($getusers)) { ?>
                 <tr>
+                    <td><?php echo "<img class='smallprofilepic' src='images/profilepictures/".$row['profilepicture']."'>"; ?></td>
                     <td><?php echo $row['username']; ?></td>
                     <td><?php echo $row['email']; ?></td>
                     <td><?php echo $row['lastlogin']; ?></td>
@@ -130,17 +138,11 @@ mysqli_close($conn);
         </div>
 
         <div class="rightColumn">
-        <?php
-        if($profilepic == "default.png"){
-            echo "<img class='profilepic' src='images/profilepictures/default.png'>";
-        } else {
-            echo "<img class='profilepic' src='images/profilepictures/".$profilepic."'>";
-		}
-    ?>
-    <br>
-            <h3><?= $_SESSION['displayname'] ?></h3>
 
-            <a class="button" href='profile.php' title='Profile'>Edit profile</a>
+        <?php echo "<img class='profilepic' src='images/profilepictures/".$profilepic."'>";	?>
+
+        <h3><?= $_SESSION['displayname'] ?></h3>
+        <a class="button" href='profile.php' title='Profile'>Edit profile</a>
 
         </div>
 

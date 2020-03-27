@@ -48,9 +48,6 @@ if (isset($_SESSION['loggedin'])) {
 
                 <hr>
 
-                <input type="checkbox" id="rememberme" name="rememberme" value="Remember me">
-                <label for="rememberme"> Remember me</label><br><br>
-
                 <input type="submit" name="submit" value="Login">
                 <h3>Not registered? <a href='register.php'>Register</a></h3>
 
