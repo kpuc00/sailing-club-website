@@ -36,7 +36,8 @@ h1 {
     color: #4ea9ff;
 }
 
-input[type=text],
+input[type=name],
+input[type=email],
 input[type=tel],
 textarea {
     font-family: 'Roboto';

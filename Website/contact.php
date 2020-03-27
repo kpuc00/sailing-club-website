@@ -43,10 +43,10 @@ $getpicmichael->close();
             <div class="form">
                 <form action="fetchData/insertMessage.php" method="POST">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" value="" required>
+                    <input type="name" id="name" name="name" placeholder="Your Name" value="" required>
 
                     <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email" placeholder="yourname@domain.com" required>
+                    <input type="email" id="email" name="email" placeholder="yourname@domain.com" required>
 
                     <label for="phone">Phone</label>
                     <input type="tel" id="phone" name="phone" placeholder="+359234567890" required>
