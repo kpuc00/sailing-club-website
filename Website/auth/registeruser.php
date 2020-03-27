@@ -14,31 +14,26 @@ if (isset($_POST['submit'])) {
 	else if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email']) || empty($_POST['displayname'])) {
 		// One or more values are empty.
 		$message = "Please complete the registration form!";
-		//exit('Please complete the registration form');
 	}
 
 	//Email Validation
 	else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 		$message = "Email is not valid!";
-		//exit('Email is not valid!');
 	}
 
 	//Invalid Characters Validation
 	else if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
 		$message = "Username is not valid!";
-		//exit('Username is not valid!');
 	}
 
 	//Display name character Length Check
 	else if (strlen($_POST['displayname']) > 20 || strlen($_POST['displayname']) < 5) {
 		$message = "Display name must be between 5 and 20 characters long!";
-		//exit('Display name must be between 5 and 20 characters long!');
 	}
 
 	//Password character Length Check
 	else if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
 		$message = "Password must be between 5 and 20 characters long!";
-		//exit('Password must be between 5 and 20 characters long!');
 	}
 
 	else if($_POST['passwordConfirm'] != $_POST['password']){
