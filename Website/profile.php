@@ -82,7 +82,6 @@ $stmt->close();
 	</div>
 
 	<div class="rightColumn">
-	<h3><?=$_SESSION['displayname']?></h3>
 	<?php
         if($profilepic == "default.png"){
             echo "<img class='profilepic' src='images/profilepictures/default.png'>";
@@ -90,6 +89,12 @@ $stmt->close();
             echo "<img class='profilepic' src='images/profilepictures/".$profilepic."'>";
 		}
 	?>
+	<h3><?=$_SESSION['displayname']?></h3>
+	<?php 
+	if($_SESSION['usertype'] == "Admin"){
+		echo "<a class='button' href='adminpage.php' title='Admin page'>Admin page</a>";
+	}
+	?>	
 	<h4>Upload new profile picture.</h4>
 	<form action="" method="post" enctype="multipart/form-data">
 			<input type="file" name="file" accept="image/x-png,image/gif,image/jpeg">

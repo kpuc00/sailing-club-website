@@ -37,6 +37,28 @@ $stmt->bind_result($password, $email, $profilepic, $usertype, $registerdate, $la
 $stmt->fetch();
 $stmt->close();
 
+//get all registered users
+$getusersquery = "SELECT id, username, email, usertype, lastlogin FROM accounts ORDER BY id";
+$getusers = mysqli_query($conn, $getusersquery);
+
+
+
+
+if (isset($_POST['makeuser'])){
+    $touser = mysqli_query($conn, "UPDATE accounts SET usertype = 'User' WHERE id = '". $selecteduserid ."'");
+    header('Location: adminpage.php');
+}
+
+else if (isset($_POST['makeadmin'])){
+    $toadmin = mysqli_query($conn, "UPDATE accounts SET usertype = 'Admin' WHERE id = '". $selecteduserid ."'");
+    header('Location: adminpage.php');
+}
+
+else if (isset($_POST['deleteuser'])){
+    $deleteuser = mysqli_query($conn, "DELETE FROM accounts WHERE id = '". $selecteduserid ."'");
+    header('Location: adminpage.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -60,25 +82,64 @@ $stmt->close();
 
         <div class="leftColumn">
             <h3>Welcome back, <?= $_SESSION['displayname'] ?>!</h3>
-            <h3>List of registered users</h3>
+            <h3>List of registered users:</h3>
+
             <table>
+            <tr>
+                <th>Username</th>
+                <th>E-mail</th>
+                <th>Last login</th>
+                <th>Type</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <?php 
+            $userindex = 1;
+            while($row = mysqli_fetch_assoc($getusers)) { ?>
                 <tr>
-                    <td>Username</td>
-                    <td>Email</td>
-                    <td>User type</td>
-                    <td>Last login</td>
+                    <td><?php echo $row['username']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['lastlogin']; ?></td>
+                    <td><?php echo $row['usertype']; ?></td>
+                    <td><form method="post"><?php 
+                    
+                    if($row['usertype']=="User"){
+                        $selectedusername = $row['username'];
+                        $selectedusertype = "User";
+                        echo "<input type='submit' name='makeadmin' value='Make admin'/>";
+                    }
+                    else if($row['usertype']=="Admin"){
+                        $selectedusername = $row['username'];
+                        $selectedusertype = "Admin";
+                        echo "<input type='submit' name='makeuser' value='Make user'/>";
+                    }
+                    else{
+                        echo "Unavailable";
+                    }
+                    
+                    ?></td>
+                    <td><?php 
+
+                    $selectedusername = $row['username'];
+                    echo "<input type='submit' name='deleteuser' value='Delete'/>";
+
+                    ?></form></td>
                 </tr>
-                <?php /*
-                $getusers = $conn->query('SELECT username, email, usertype, lastlogin FROM accounts ORDER BY username ASC');
-                while($users = $getusers->fetch_assoc()){
-                echo "<td>".$users["username"]."</td><td>".$users["email"]."</td><td>".$users["usertype"]."</td><td>".$users["lastlogin"]."</td>";
-                }
-                $conn->close();*/
-                ?>
-            </table>
+                <?php $userindex++; } ?>
+        </table>
+
+            
         </div>
 
         <div class="rightColumn">
+        <?php
+        if($profilepic == "default.png"){
+            echo "<img class='profilepic' src='images/profilepictures/default.png'>";
+        } else {
+            echo "<img class='profilepic' src='images/profilepictures/".$profilepic."'>";
+		}
+    ?>
+    <br>
             <h3><?= $_SESSION['displayname'] ?></h3>
 
             <a class="button" href='profile.php' title='Profile'>Edit profile</a>
