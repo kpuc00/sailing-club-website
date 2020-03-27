@@ -51,7 +51,7 @@ if (isset($_SESSION['loggedin'])) {
 
                 <input type="password" id="password" name="password" placeholder="Password" required>
 
-                <!--<input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm password" required>-->
+                <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm password" required>
 
                 <hr>
 

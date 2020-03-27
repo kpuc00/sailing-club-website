@@ -41,6 +41,10 @@ if (isset($_POST['submit'])) {
 		//exit('Password must be between 5 and 20 characters long!');
 	}
 
+	else if($_POST['passwordConfirm'] != $_POST['password']){
+		$message = "Passwords do not match!";
+	}
+
 	// We need to check if the account with that username exists.
 	else {
 		if ($stmt = $conn->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
