@@ -45,17 +45,17 @@ $getusers = mysqli_query($conn, $getusersquery);
 
 
 if (isset($_POST['makeuser'])){
-    $touser = mysqli_query($conn, "UPDATE accounts SET usertype = 'User' WHERE id = '". $selecteduserid ."'");
+    $touser = mysqli_query($conn, "UPDATE accounts SET usertype = 'User' WHERE id = '". $selectedusername ."'");
     header('Location: adminpage.php');
 }
 
 else if (isset($_POST['makeadmin'])){
-    $toadmin = mysqli_query($conn, "UPDATE accounts SET usertype = 'Admin' WHERE id = '". $selecteduserid ."'");
+    $toadmin = mysqli_query($conn, "UPDATE accounts SET usertype = 'Admin' WHERE id = '". $selectedusername ."'");
     header('Location: adminpage.php');
 }
 
 else if (isset($_POST['deleteuser'])){
-    $deleteuser = mysqli_query($conn, "DELETE FROM accounts WHERE id = '". $selecteduserid ."'");
+    $deleteuser = mysqli_query($conn, "DELETE FROM accounts WHERE id = '". $selectedusername ."'");
     header('Location: adminpage.php');
 }
 
