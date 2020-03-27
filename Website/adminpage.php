@@ -28,12 +28,12 @@ if (isset($_POST['removepic'])) {
     $remove = mysqli_query($conn, "UPDATE accounts SET profilepicture = 'default.png' WHERE username = '" . $_SESSION['username'] . "'");
 }
 
+
+//Look here i changed somthing and now the profile picture does not work please look into it
 // We don't have the password, email and other info stored in sessions so instead we can get the results from the database.
-$stmt = $conn->prepare('SELECT password, email, profilepicture, usertype, registerdate, lastlogin FROM accounts WHERE id = ?');
+$stmt = $conn->prepare('SELECT * FROM accounts');
 // In this case we can use the account ID to get the account info.
-$stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($password, $email, $profilepic, $usertype, $registerdate, $lastlogin);
 $stmt->fetch();
 $stmt->close();
 
@@ -42,23 +42,7 @@ $getusersquery = "SELECT id, username, email, usertype, lastlogin FROM accounts 
 $getusers = mysqli_query($conn, $getusersquery);
 
 
-
-
-if (isset($_POST['makeuser'])){
-    $touser = mysqli_query($conn, "UPDATE accounts SET usertype = 'User' WHERE id = '". $selectedusername ."'");
-    header('Location: adminpage.php');
-}
-
-else if (isset($_POST['makeadmin'])){
-    $toadmin = mysqli_query($conn, "UPDATE accounts SET usertype = 'Admin' WHERE id = '". $selectedusername ."'");
-    header('Location: adminpage.php');
-}
-
-else if (isset($_POST['deleteuser'])){
-    $deleteuser = mysqli_query($conn, "DELETE FROM accounts WHERE id = '". $selectedusername ."'");
-    header('Location: adminpage.php');
-}
-
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -94,24 +78,33 @@ else if (isset($_POST['deleteuser'])){
                 <th></th>
             </tr>
             <?php 
-            $userindex = 1;
+
             while($row = mysqli_fetch_assoc($getusers)) { ?>
                 <tr>
                     <td><?php echo $row['username']; ?></td>
                     <td><?php echo $row['email']; ?></td>
                     <td><?php echo $row['lastlogin']; ?></td>
                     <td><?php echo $row['usertype']; ?></td>
-                    <td><form method="post"><?php 
+                    <td><?php 
                     
                     if($row['usertype']=="User"){
                         $selectedusername = $row['username'];
                         $selectedusertype = "User";
-                        echo "<input type='submit' name='makeadmin' value='Make admin'/>";
+                    ?>
+                        <form action="fetchData/makeAdmin.php?userId=<?php echo $row["id"]; ?>" method="POST">
+                            <input type='submit' name='makeadmin' value='Make admin'/>
+                        </form>
+                    <?php
+
                     }
                     else if($row['usertype']=="Admin"){
                         $selectedusername = $row['username'];
                         $selectedusertype = "Admin";
-                        echo "<input type='submit' name='makeuser' value='Make user'/>";
+                    ?>
+                        <form action="fetchData/makeUser.php?userId=<?php echo $row["id"]; ?>" method="POST">
+                            <input type='submit' name='makeuser' value='Make user'/>
+                        </form>
+                    <?php
                     }
                     else{
                         echo "Unavailable";
@@ -121,11 +114,16 @@ else if (isset($_POST['deleteuser'])){
                     <td><?php 
 
                     $selectedusername = $row['username'];
-                    echo "<input type='submit' name='deleteuser' value='Delete'/>";
-
-                    ?></form></td>
+                    ?>
+                        <form action="fetchData/deleteUser.php?userId=<?php echo $row["id"]; ?>" method="POST">
+                            <input type='submit' name='delete' value='Delete'/>
+                        </form>    
+                    
+                    </td>
                 </tr>
-                <?php $userindex++; } ?>
+                <?php 
+            } 
+            ?>
         </table>
 
             
