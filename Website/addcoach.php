@@ -31,7 +31,8 @@
             <textarea id="coachDescription" name="coachDescription" placeholder="Coach Description" style="height:200px"></textarea>
             <div id="coachDescriptionError"></div>
             <p>Choose picture</p>
-            <input type="file" id="coachPicture" name="coachPicture" accept="image/x-png,image/gif,image/jpeg">     
+
+            <input type="file" id="coachPicture" name="file" accept="image/x-png,image/gif,image/jpeg">     
             <div id="coachPictureError"></div>
 
             <hr>

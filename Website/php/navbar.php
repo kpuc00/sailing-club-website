@@ -39,7 +39,7 @@ $getnavpic->close();
             </button>
             <div class="dropdown-content">
             <?php
-                    include("fetchData/getRacesID_Name.php");
+                    require("fetchData/getRacesID_Name.php");
                     while ($row = mysqli_fetch_array($raceID_Name)) {
                 ?>
                         <a href="regatta.php?regattaID=<?php echo $row["raceID"]; ?>"><i class="fa fa-file"></i> <?php echo $row["RaceName"]?></a>   

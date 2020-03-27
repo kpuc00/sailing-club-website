@@ -13,4 +13,5 @@
             echo $row['ClassDescription'] ;
         }
     }
+    mysqli_close($conn);
 ?>
