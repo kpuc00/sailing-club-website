@@ -30,7 +30,6 @@ h1 {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 17px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -49,7 +48,7 @@ table {
 td,
 th {
     border: 1px solid #dddddd;
-    text-align: center;
+    text-align: left;
     padding: 8px;
 }
 
@@ -71,5 +70,8 @@ tr:nth-child(even) {
         margin-left: 0;
         margin-right: 0;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    }
+    table {
+        font-size: smaller;
     }
 }
