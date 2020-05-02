@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-body {
-    background: #c4c4c4 url(../images/bodybackground.png);
-    background-size: auto;
-    font-family: 'Roboto';
-    min-width: 560px;
-    margin: 0;
-    scroll-behavior: smooth;
-}

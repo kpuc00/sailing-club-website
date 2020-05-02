@@ -1,0 +1,104 @@
+.content {
+    background-color: rgba(112, 112, 112, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    min-height: 50vh;
+    min-width: 720px;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.leftColumn {
+    grid-column: 1/ 2;
+}
+
+.rightColumn {
+    width: 100%;
+    padding-left: 10px;
+    grid-column: 2/ 3;
+    text-align: center;
+}
+
+.button {
+    background-color: #666666;
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button:hover {
+    background-color: #4ea9ff;
+}
+
+.profilepic {
+    max-width: 70%;
+    border-radius: 50%;
+}
+
+h1 {
+    grid-column: 1/ 3;
+    text-align: center;
+    font-size: 30px;
+    color: #4ea9ff;
+}
+
+input[type=file] {
+    font-family: 'Roboto';
+}
+
+input[type=submit] {
+    font-family: 'Roboto';
+    background-color: #666666;
+    color: white;
+    font-weight: bold;
+    margin: 2px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #4ea9ff;
+}
+
+@media (max-width: 776px) {
+    .content {
+        background-color: rgba(112, 112, 112, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: none;
+        min-height: 50vh;
+        max-width: 100vw;
+        min-width: unset;
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    }
+    .leftColumn {
+        grid-column: 1/ 2;
+        grid-row: 3/4;
+        justify-content: center;
+    }
+    .rightColumn {
+        grid-column: 1/ 2;
+        grid-row: 2/3;
+        padding-left: unset;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    .profilepic {
+        max-width: 40%;
+    }
+}

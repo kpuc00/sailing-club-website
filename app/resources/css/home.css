@@ -1,0 +1,99 @@
+.content {
+    background-color: rgba(112, 112, 112, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    min-height: 50vh;
+    min-width: 720px;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.leftColumn {
+    grid-column: 1/ 2;
+    grid-row: 2/ 3;
+    justify-content: center;
+    text-align: center;
+}
+
+.rightColumn {
+    grid-column: 2/ 3;
+    grid-row: 2/ 3;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+h1 {
+    grid-column: 1/ 3;
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: 30px;
+    color: #4ea9ff;
+}
+
+.infoboxcontainer {
+    text-decoration: none;
+}
+
+@media (max-width: 776px) {
+    .content {
+        background-color: rgba(112, 112, 112, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 100%;
+        min-height: 50vh;
+        max-width: 100vw;
+        min-width: unset;
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    }
+    .leftColumn {
+        grid-column: 1/ 2;
+        grid-row: 3/4;
+        justify-content: center;
+    }
+    .rightColumn {
+        grid-column: 1/ 2;
+        grid-row: 2/3;
+        padding-left: unset;
+        text-align: justify;
+    }
+    h1 {
+        grid-row: 1/2;
+    }
+}
+
+
+/*Regatta links styling start*/
+
+.rightColumn .linkFormat {
+    margin: 5% auto;
+    text-align: center;
+    list-style-type: none;
+}
+
+.rightColumn .linkFormat li {
+    padding-top: 5vh;
+}
+
+.rightColumn .linkFormat a {
+    color: blue;
+    text-decoration: none;
+}
+
+.rightColumn .linkFormat a:hover {
+    text-decoration: underline;
+}
+
+.rightColumn .linkFormat a:visited {
+    color: darkblue;
+}
+
+
+/*Regattalinks styling end*/
